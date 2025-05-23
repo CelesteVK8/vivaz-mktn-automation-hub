@@ -63,15 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom Vivaz MKTN colors
+				// Updated Vivaz MKTN colors
 				vivaz: {
 					purple: {
-						DEFAULT: '#2b003d',
+						DEFAULT: '#6e0c9e',
 						dark: '#1a032d',
-						light: '#6e0c9e'
+						light: '#9b4fd3'
 					},
 					metallic: '#c0c0c0',
-					neon: '#00d9ff',
+					dark: '#121212', // New dark background color
 					accent: '#ff56ee'
 				}
 			},
@@ -87,8 +87,8 @@ export default {
 				inter: ['Inter', 'sans-serif']
 			},
 			boxShadow: {
-				'neon': '0 0 5px #00d9ff, 0 0 20px rgba(0, 217, 255, 0.3)',
-				'card': '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.2)',
+				'neon': '0 0 5px rgba(110, 12, 158, 0.7), 0 0 20px rgba(110, 12, 158, 0.3)',
+				'card': '0 10px 30px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.3)',
 				'button': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.15)'
 			},
 			keyframes: {
@@ -110,10 +110,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 10px rgba(0, 217, 255, 0.3), 0 0 20px rgba(0, 217, 255, 0.2)'
+						boxShadow: '0 0 10px rgba(110, 12, 158, 0.3), 0 0 20px rgba(110, 12, 158, 0.2)'
 					},
 					'50%': { 
-						boxShadow: '0 0 15px rgba(0, 217, 255, 0.6), 0 0 30px rgba(0, 217, 255, 0.4)'
+						boxShadow: '0 0 15px rgba(110, 12, 158, 0.6), 0 0 30px rgba(110, 12, 158, 0.4)'
 					}
 				},
 				'float': {

@@ -4,9 +4,10 @@ import React, { useEffect, useRef } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = '' }) => {
+const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = '', delay = 0 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -14,7 +15,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = '' })
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            setTimeout(() => {
+              entry.target.classList.add('active');
+            }, delay);
             observer.unobserve(entry.target);
           }
         });
@@ -35,7 +38,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className = '' })
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [delay]);
   
   return (
     <div ref={sectionRef} className={`reveal-section ${className}`}>

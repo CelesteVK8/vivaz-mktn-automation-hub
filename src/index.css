@@ -40,19 +40,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -111,18 +104,14 @@
 
 /* Custom Classes */
 @layer components {
-  .glow-text {
-    text-shadow: 0 0 5px rgba(0, 217, 255, 0.7);
-  }
-  
   .metallic-text {
     @apply text-vivaz-metallic;
-    text-shadow: 0 0 1px rgba(192, 192, 192, 0.5), 0 0 2px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 1px rgba(192, 192, 192, 0.5);
   }
   
   .card-border {
-    @apply border border-vivaz-metallic/20 rounded-xl;
-    box-shadow: 0 0 0 1px rgba(192, 192, 192, 0.1);
+    @apply border border-vivaz-purple/20 rounded-xl;
+    box-shadow: 0 0 0 1px rgba(110, 12, 158, 0.1);
   }
   
   .diagonal-section {
@@ -161,17 +150,30 @@
   }
   
   .btn-hover-effect::before {
-    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-vivaz-neon/20 z-[-1] transition-all duration-300;
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-vivaz-purple/30 z-[-1] transition-all duration-300;
     transform: skewX(-15deg);
   }
   
   .btn-hover-effect:hover::before {
     @apply left-0;
   }
+  
+  /* Pixel accent elements */
+  .pixel-accent {
+    @apply relative;
+  }
+  
+  .pixel-accent::before {
+    @apply content-[''] absolute -top-1 -left-1 w-1 h-1 bg-vivaz-purple;
+  }
+  
+  .pixel-accent::after {
+    @apply content-[''] absolute -bottom-1 -right-1 w-1 h-1 bg-vivaz-purple;
+  }
 }
 
-/* Particles animation background */
-.particles {
+/* Pixel background styling */
+.pixels {
   position: absolute;
   top: 0;
   left: 0;
@@ -181,21 +183,10 @@
   z-index: 0;
 }
 
-.particle {
+.pixel {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background-color: rgba(192, 192, 192, 0.3);
-  border-radius: 50%;
-  animation: float 8s linear infinite;
-}
-
-.particles .particle:nth-child(3n) {
-  background-color: rgba(0, 217, 255, 0.3);
-}
-
-.particles .particle:nth-child(5n) {
-  animation-duration: 12s;
+  background-color: rgba(110, 12, 158, 0.5);
+  opacity: 0.3;
 }
 
 /* Scroll reveal observer */
